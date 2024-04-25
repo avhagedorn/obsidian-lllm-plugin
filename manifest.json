@@ -1,0 +1,10 @@
+{
+	"id": "llm-plugin",
+	"name": "LLM Plugin",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Allows you to use LLMs in Obsidian.",
+	"author": "Alan Hagedorn",
+	"authorUrl": "https://avhagedorn.dev",
+	"isDesktopOnly": false
+}
