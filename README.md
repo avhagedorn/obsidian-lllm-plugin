@@ -1,6 +1,10 @@
-# ✨ Obsidian GPT-3.5 / LLM Plugin
+# ✨ Obsidian LLM Plugin
 
 This (in-progress) plugin allows you to select text, then call the command `Complete selected text` in order to finish your paragraph, brainstorm new ideas, etc!
+
+Supported LLM Providers:
+- OpenAI GPT-4
+- Gemini Pro
 
 ### Setup
 
