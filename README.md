@@ -2,6 +2,10 @@
 
 This (in-progress) plugin allows you to select text, then call the command `Complete selected text` in order to finish your paragraph, brainstorm new ideas, etc!
 
+
+https://github.com/avhagedorn/obsidian-lllm-plugin/assets/66842958/50df1d2a-8796-40a2-8d5f-74d90db19788
+
+
 Supported LLM Providers:
 - OpenAI GPT-4
 - Gemini Pro
