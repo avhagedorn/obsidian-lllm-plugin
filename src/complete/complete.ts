@@ -15,28 +15,26 @@ class LLMResponseStream extends TransformStream {
             start() {},
             async transform(chunk, controller) {
 
-                if (typeof chunk === 'string') {
-                    controller.enqueue(chunk);
-                    return;
-                }
+                // if (typeof chunk === 'string') {
+                //     controller.enqueue(chunk);
+                //     return;
+                // }
 
-                else if (chunk instanceof ArrayBuffer) {
-                    const decodedText = textDecoder.decode(chunk);
-                    const decodedJson = JSON.parse(decodedText);
-
-                    // OpenAI Response
-                    if (decodedJson.hasOwnProperty('choices')) {
-                        const data = decodedJson as ChatCompletionChunk;
-                        controller.enqueue(data.choices[0]?.delta?.content || '');
-                    } 
-                    
-                    // Anthropic Response
-                    else if (decodedJson.hasOwnProperty('type')) {
-                        const data = decodedJson as MessageStreamEvent;
-                        if (data.type === "message_delta") {
-                            const deltaData = data as MessageDeltaEvent;
-                            controller.enqueue(deltaData.delta.stop_sequence);
-                        }
+                const decodedText = textDecoder.decode(chunk);
+                const decodedJson = JSON.parse(decodedText);
+                console.log(decodedJson);
+                // OpenAI Response
+                if (decodedJson.hasOwnProperty('choices')) {
+                    const data = decodedJson as ChatCompletionChunk;
+                    controller.enqueue(data.choices[0]?.delta?.content || '');
+                } 
+                
+                // Anthropic Response
+                else if (decodedJson.hasOwnProperty('type')) {
+                    const data = decodedJson as MessageStreamEvent;
+                    if (data.type === "message_delta") {
+                        const deltaData = data as MessageDeltaEvent;
+                        controller.enqueue(deltaData.delta.stop_sequence);
                     }
                 }
             },

@@ -63,6 +63,7 @@ export default class LLMPlugin extends Plugin {
 		// eslint-disable-next-line no-constant-condition
 		while (true) {
 			const { done, value } = await response.read();
+			console.log(done, value);
 			if (done) break;
 			editor.replaceSelection(value);
 			editor.setSelection(editor.getCursor("to"), editor.getCursor("to"));

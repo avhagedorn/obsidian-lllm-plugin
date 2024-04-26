@@ -7,7 +7,7 @@ https://github.com/avhagedorn/obsidian-lllm-plugin/assets/66842958/50df1d2a-8796
 
 
 Supported LLM Providers:
-- OpenAI GPT-4
+- OpenAI GPT-3.5
 - Gemini Pro
 
 ### Setup

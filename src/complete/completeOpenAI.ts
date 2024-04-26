@@ -13,7 +13,7 @@ const completeOpenAI = async (
         messages: [
             {"role": "system", "content": systemPrompt},
             {"role": "user", "content": userPrompt}],
-        model: "gpt-4",
+        model: "gpt-3.5-turbo",
         stream: true
     });
 
